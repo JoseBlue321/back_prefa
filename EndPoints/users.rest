@@ -1,0 +1,29 @@
+###*****USERS******
+###index
+GET http://prefa.test/api/users 
+
+###store
+POST http://prefa.test/api/users
+Accept: application/json
+Content-Type: application/json
+{
+    "name": "pedro",
+    "email": "pedro@gmail.com",
+    "password": "12345"
+}
+
+###show
+GET http://prefa.test/api/users/2
+
+###update
+PUT http://prefa.test/api/users/2
+Accept: application/json
+Content-Type: application/json
+{
+    "name": "maria",
+    "email": "maria@gmail.com",
+    "password": "54321"
+}
+
+###delete
+DELETE http://prefa.test/api/users/7

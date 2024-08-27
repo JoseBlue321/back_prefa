@@ -1,0 +1,32 @@
+###index
+GET http://prefa.test/api/observaciones
+
+###store
+POST http://prefa.test/api/observaciones
+Accept: application/json
+Content-Type: application/json
+
+{
+    "postulante_id": 1,
+    "reclamo_id": 2,
+    "observacion": "presento su carta de reclamo",
+    "abogado": true   
+}
+
+###show
+GET http://prefa.test/api/observaciones/2
+
+###update
+PUT http://prefa.test/api/observaciones/2
+Accept: application/json
+Content-Type: application/json
+
+{
+    "postulante_id": 1,
+    "reclamo_id": 2,
+    "observacion": "presento su carta de reclamo actualizado",
+    "abogado": true   
+}
+
+###delete
+DELETE http://prefa.test/api/observaciones/2

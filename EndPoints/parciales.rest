@@ -1,0 +1,31 @@
+###index
+GET http://prefa.test/api/parciales
+
+###store
+POST http://prefa.test/api/parciales
+Accept: application/json
+Content-Type: application/json
+
+{
+    "parcial": "tercer parcial",
+    "fecha": "2025-02-15",
+    "detalle": "este es el tercer parcial"
+}
+
+###show
+GET http://prefa.test/api/parciales/5
+
+###update
+PUT http://prefa.test/api/parciales/5
+Accept: application/json
+Content-Type: application/json
+
+{
+    "parcial": "tercer parcial actualizado",
+    "fecha": "2025-02-15",
+    "detalle": "este es el tercer parcial"
+}
+
+###delete
+DELETE http://prefa.test/api/parciales/5
+

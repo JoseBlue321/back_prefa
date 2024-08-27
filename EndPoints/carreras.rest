@@ -1,0 +1,26 @@
+###index
+GET http://prefa.test/api/carreras
+
+###store
+POST http://prefa.test/api/carreras
+Accept: application/json
+Content-Type: application/json
+
+{
+    "carrera": "fisica"
+}
+
+###show
+GET http://prefa.test/api/carreras/4
+
+###update
+PUT http://prefa.test/api/carreras/6
+Accept: application/json
+Content-Type: application/json
+
+{
+    "carrera": "derecho"
+}
+
+###delete
+DELETE http://prefa.test/api/carreras/13

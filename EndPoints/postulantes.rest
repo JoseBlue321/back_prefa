@@ -1,0 +1,34 @@
+###index
+GET http://prefa.test/api/postulantes 
+
+###store
+POST http://prefa.test/api/postulantes 
+Accept: application/json
+Content-Type: application/json
+
+{
+    "user_id": 2,
+    "carnet": "54321",
+    "nombre": "ana",
+    "genero": "femenino",
+    "fecha_nacimiento": "20-05-2000"
+}
+
+###show
+GET http://prefa.test/api/postulantes/16
+
+###update
+PUT http://prefa.test/api/postulantes/16
+Accept: application/json
+Content-Type: application/json
+
+{
+    "user_id": 2,
+    "carnet": "54321",
+    "nombre": "ana actualizado",
+    "genero": "femenino",
+    "fecha_nacimiento": "20-05-2000"
+}
+
+###destroy
+DELETE http://prefa.test/api/postulantes/16

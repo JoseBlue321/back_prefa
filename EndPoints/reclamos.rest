@@ -1,0 +1,32 @@
+###index
+GET http://prefa.test/api/reclamos
+
+###store
+POST http://prefa.test/api/reclamos
+Accept: application/json
+Content-Type: application/json
+
+{
+    "materia": "fisica",
+    "pagina": "Pag. 125",
+    "pregunta": 20,
+    "carta": "enlace de la carta"
+}
+
+###show
+GET http://prefa.test/api/reclamos/3
+
+###update
+PUT http://prefa.test/api/reclamos/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "materia": "fisica actualizado",
+    "pagina": "Pag. 125",
+    "pregunta": 20,
+    "carta": "enlace de la carta"
+}
+
+###delete
+DELETE http://prefa.test/api/reclamos/3

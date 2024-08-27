@@ -1,0 +1,28 @@
+###index
+GET http://prefa.test/api/inscripciones
+
+###store
+POST http://prefa.test/api/inscripciones
+Accept: application/json
+Content-Type: application/json
+
+{
+    "mension_id": 10,
+    "postulante_id": 17
+}
+
+###show
+GET http://prefa.test/api/inscripciones/2
+
+###update
+PUT http://prefa.test/api/inscripciones/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "mension_id": 11,
+    "postulante_id": 17
+}
+
+###delete
+DELETE http://prefa.test/api/inscripciones/3

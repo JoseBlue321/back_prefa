@@ -1,0 +1,36 @@
+###index
+GET http://prefa.test/api/evaluaciones
+
+###store
+POST http://prefa.test/api/evaluaciones
+Accept: application/json
+Content-Type: application/json
+
+{
+    "inscripcion_id": 2,
+    "parcial_id": 4,
+    "ambiente_id": 1,
+    "nota": 8,
+    "estado": false,
+    "hoja_respuesta": "url de la hoja de respuesta"
+}
+
+###show
+GET http://prefa.test/api/evaluaciones/3
+
+###update
+PUT http://prefa.test/api/evaluaciones/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "inscripcion_id": 2,
+    "parcial_id": 4,
+    "ambiente_id": 1,
+    "nota": 8,
+    "estado": false,
+    "hoja_respuesta": "url de la hoja de respuesta actualizado"
+}
+
+###delete
+DELETE http://prefa.test/api/evaluaciones/2

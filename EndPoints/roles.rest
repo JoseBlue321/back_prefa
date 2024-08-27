@@ -1,0 +1,28 @@
+###index
+GET http://prefa.test/api/roles
+
+###store
+POST http://prefa.test/api/roles
+Accept: application/json
+Content-Type: application/json
+
+{
+    "user_id": 5,
+    "rol": "postulante"
+}
+
+###show
+GET http://prefa.test/api/roles/4
+
+###update
+PUT http://prefa.test/api/roles/4
+Accept: application/json
+Content-Type: application/json
+
+{
+    "user_id": 5,
+    "rol": "admin"
+}
+
+###delete
+DELETE http://prefa.test/api/roles/4

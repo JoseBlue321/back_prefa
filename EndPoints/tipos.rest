@@ -1,0 +1,26 @@
+###index
+GET http://prefa.test/api/tipos
+
+###store
+POST http://prefa.test/api/tipos
+Accept: application/json
+Content-Type: application/json
+
+{
+    "tipo": "otro"
+}
+
+###show
+GET http://prefa.test/api/tipos/9
+
+###update
+PUT http://prefa.test/api/tipos/9
+Accept: application/json
+Content-Type: application/json
+
+{
+    "tipo": "otro actualizado"
+}
+
+###delete
+DELETE http://prefa.test/api/tipos/9

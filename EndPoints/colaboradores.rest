@@ -1,0 +1,34 @@
+###index
+GET http://prefa.test/api/colaboradores
+
+###store
+POST http://prefa.test/api/colaboradores
+Accept: application/json
+Content-Type: application/json
+
+{
+    "tipo_id": 1,
+    "nombre": "pedro",
+    "paterno": "lopez",
+    "materno": "villca",
+    "telefono": "78787878"
+}
+
+###show
+GET http://prefa.test/api/colaboradores/4
+
+###update
+PUT http://prefa.test/api/colaboradores/4
+Accept: application/json
+Content-Type: application/json
+
+{
+    "tipo_id": 1,
+    "nombre": "pedro actualizado",
+    "paterno": "lopez",
+    "materno": "villca",
+    "telefono": "78787878"
+}
+
+###delete
+DELETE http://prefa.test/api/colaboradores/4

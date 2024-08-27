@@ -1,0 +1,36 @@
+###index
+GET http://prefa.test/api/ambientes
+
+###store
+POST http://prefa.test/api/ambientes
+Accept: application/json
+Content-Type: application/json
+
+{
+    "edificio": "nutricion",
+    "piso": "planta baja",
+    "aula": "nutricion",
+    "capacidad": 120,
+    "sillas": 100,
+    "tableros": 100
+}
+
+###show
+GET http://prefa.test/api/ambientes/2
+
+###update
+PUT http://prefa.test/api/ambientes/2
+Accept: application/json
+Content-Type: application/json
+
+{
+    "edificio": "nutricion actualizado",
+    "piso": "planta baja",
+    "aula": "nutricion",
+    "capacidad": 120,
+    "sillas": 100,
+    "tableros": 100
+}
+
+###delete
+DELETE http://prefa.test/api/ambientes/2

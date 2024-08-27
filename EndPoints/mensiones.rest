@@ -1,0 +1,28 @@
+###index
+GET http://prefa.test/api/mensiones
+
+###store
+POST http://prefa.test/api/mensiones
+Accept: application/json
+Content-Type: application/json
+
+{
+    "carrera_id": 5,
+    "mension": "informatica"
+}
+
+###show
+GET http://prefa.test/api/mensiones/6
+
+###update
+PUT http://prefa.test/api/mensiones/9
+Accept: application/json
+Content-Type: application/json
+
+{
+    "carrera_id": 6,
+    "mension": "informatica actualizado"
+}
+
+###delete
+DELETE http://prefa.test/api/mensiones/9
