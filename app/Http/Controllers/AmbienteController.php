@@ -22,8 +22,8 @@ class AmbienteController extends Controller
             'piso'=>['required','string'],
             'aula'=>['string','required'],
             'capacidad'=>['required','numeric'],
-            'sillas'=>['required','numeric'],
-            'tableros'=>['required','numeric']
+            'sillas'=>['nullable','numeric'],
+            'tableros'=>['nullable','numeric']
         ]);
         $ambiente = Ambiente::create([
             'edificio'=>$request->input('edificio'),
@@ -34,7 +34,7 @@ class AmbienteController extends Controller
             'tableros'=>$request->input('tableros')
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "ambiente"=>$ambiente
         ]);
     }
@@ -54,8 +54,8 @@ class AmbienteController extends Controller
             'piso'=>['required','string'],
             'aula'=>['string','required'],
             'capacidad'=>['required','numeric'],
-            'sillas'=>['required','numeric'],
-            'tableros'=>['required','numeric']
+            'sillas'=>['nullable','numeric'],
+            'tableros'=>['nullable','numeric']
         ]);
         $ambiente = Ambiente::find($id);
         $ambiente->update([
@@ -67,7 +67,7 @@ class AmbienteController extends Controller
             'tableros'=>$request->input('tableros')
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "ambiente"=>$ambiente
         ]);
 
@@ -78,7 +78,7 @@ class AmbienteController extends Controller
         $ambiente = Ambiente::find($id);
         $ambiente->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "ambiente"=>$ambiente
         ]);
     }
