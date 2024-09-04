@@ -12,7 +12,7 @@ class CarreraController extends Controller
         $carreras = Carrera::all();
         return response()->json([
             "carreras"=>$carreras
-        ],200);
+        ]);
     }
 
     public function store(Request $request)
@@ -24,7 +24,7 @@ class CarreraController extends Controller
             'carrera'=>$request->input('carrera')
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "carrera"=>$carrera
         ]);
     }
@@ -47,7 +47,7 @@ class CarreraController extends Controller
             'carrera'=>$request->input('carrera')
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "carrera"=>$carrera,
         ]);
 
@@ -58,7 +58,7 @@ class CarreraController extends Controller
         $carrera = Carrera::find($id);
         $carrera->delete();
         return response()->json([
-            "mensaje"=>"Rgistro eliminado",
+            "message"=>"Registro eliminado",
             "carrera"=>$carrera
         ]);
     }
