@@ -16,12 +16,15 @@ use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\ReclamoController;
 use App\Http\Controllers\ObservacionController;
 
+use App\Http\Controllers\ConsultaController;
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::apiresource('users',UserController::class);
 Route::apiresource('postulantes',PostulanteController::class);
+Route::post('postulantes/{id}',[PostulanteController::class,'store_img']);
 Route::apiresource('roles',RolController::class);
 Route::apiresource('carreras',CarreraController::class);
 Route::apiresource('mensiones',MensionController::class);
@@ -33,3 +36,6 @@ Route::apiresource('tipos',TipoController::class);
 Route::apiresource('colaboradores',ColaboradorController::class);
 Route::apiresource('reclamos',ReclamoController::class);
 Route::apiresource('observaciones',ObservacionController::class);
+
+//********Consultas SQL******** */
+Route::get('listar',[ConsultaController::class,'listar'])->name('listar.postulantes');

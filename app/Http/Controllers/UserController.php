@@ -4,20 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return response()->json($users,200);
+        //$users = User::all();
+        $users = DB::select('select id,name,email,password from users');
+        return response()->json([
+            "users" => $users
+        ]);
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name'=>['required','string'],
-            'email'=>['required','string','email','unique:users'],
+            'email'=>['required','unique:users','email:rfc,dns'],
             'password'=>['required','string','min:3'],
         ]);
         $user = User::create([
@@ -25,13 +29,16 @@ class UserController extends Controller
             'email'=>$request->input('email'),
             'password'=>bcrypt($request->input('password')),
         ]);
-        return response()->json(["mensaje"=>"Registro Exitoso"],200);
+        return response()->json([
+            "message" => "Registro Exitoso",
+            "user" => $user->name
+        ]);
     }
 
     public function show(string $id)
     {
         $user = User::find($id);
-        return response()->json($user,200);
+        return response()->json($user);
     }
 
     public function update(Request $request, string $id)
@@ -47,13 +54,13 @@ class UserController extends Controller
             'email'=>$request->input('email'),
             'password'=>bcrypt($request->input('password')),
         ]);
-        return response()->json(["mensaje"=>"Update Exitoso"],200);
+        return response()->json(["message"=>"Registro actualizado"],200);
     }
 
     public function destroy(string $id)
     {
         $user = User::find($id);
         $user->delete();
-        return response()->json(["mensaje"=>"Se elimino el Registro"],200);
+        return response()->json(["message"=>"Registro eliminado"],200);
     }
 }

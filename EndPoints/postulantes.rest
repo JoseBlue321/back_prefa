@@ -7,11 +7,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "user_id": 2,
-    "carnet": "54321",
-    "nombre": "ana",
-    "genero": "femenino",
-    "fecha_nacimiento": "20-05-2000"
+    "user_id": "5",
+    "carnet": "12345",
+    "nombre": "juan",
+    "genero": "masculino",
+    "fecha_nacimiento": "1996-03-19",
+    "correo": "jos123apaza@gmail.com",
+    "fecha_pago": "2024-05-20 10:05:25",
+    "imagen": ""
 }
 
 ###show
