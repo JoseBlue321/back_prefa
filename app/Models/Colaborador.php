@@ -28,11 +28,11 @@ class Colaborador extends Model
 
     public function parciales(): BelongsToMany
     {
-        return $this->belongsToMany(Parcial::class, 'colaborador_parcial_table', 'colaborador_id', 'parcial_id');
+        return $this->belongsToMany(Parcial::class, 'colaborador_parcial', 'colaborador_id', 'parcial_id');
     }
 
     public function evaluaciones(): BelongsToMany
     {
-        return $this->belongsToMany(Evaluacion::class, 'colaborador_evaluacion_table', 'colaborador_id', 'evaluacion_id');
+        return $this->belongsToMany(Evaluacion::class, 'colaborador_evaluacion', 'colaborador_id', 'evaluacion_id');
     }
 }

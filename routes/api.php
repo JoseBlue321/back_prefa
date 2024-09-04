@@ -35,6 +35,10 @@ Route::apiresource('evaluaciones',EvaluacionController::class);
 Route::post('evaluaciones/{id}',[EvaluacionController::class,'store_img']);
 Route::apiresource('tipos',TipoController::class);
 Route::apiresource('colaboradores',ColaboradorController::class);
+Route::post('colaboradores/parciales/{id}',[ColaboradorController::class,'store_colaborador_parcial']);
+Route::post('colaboradores/evaluaciones/{id}',[ColaboradorController::class,'store_colaborador_evaluacion']);
+Route::delete('colaboradores/parciales/{id}',[ColaboradorController::class,'destroy_colaborador_parcial']);
+Route::delete('colaboradores/evaluaciones/{id}',[ColaboradorController::class,'destroy_colaborador_evaluacion']);
 Route::apiresource('reclamos',ReclamoController::class);
 Route::apiresource('observaciones',ObservacionController::class);
 

@@ -32,7 +32,7 @@ class ColaboradorController extends Controller
             'telefono'=>$request->input('telefono'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitos",
+            "message"=>"Registro exitoso",
             "colaborador"=>$colaborador
         ]);
     }
@@ -41,7 +41,7 @@ class ColaboradorController extends Controller
     {
         $colaborador = Colaborador::find($id);
         return response()->json([
-            "colaborador"=>$colaborador
+            "colaborador"=>$colaborador,
         ]);
     }
 
@@ -63,7 +63,7 @@ class ColaboradorController extends Controller
             'telefono'=>$request->input('telefono'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "colaborador"=>$colaborador
         ]);
 
@@ -73,8 +73,40 @@ class ColaboradorController extends Controller
     {
         $colaborador = Colaborador::find($id);
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "colaborador"=>$colaborador
+        ]);
+    }
+
+    public function store_colaborador_parcial(Request $request,string $id){
+        $colaborador = Colaborador::find($id);
+        $colaborador->parciales()->sync($request->input('parciales'));
+        return response()->json([
+            "message"=>"Registro exito",
+        ]);
+    }
+
+    public function store_colaborador_evaluacion(Request $request,string $id){
+        $colaborador = Colaborador::find($id);
+        $colaborador->evaluaciones()->attach($request->input('evaluaciones'));
+        return response()->json([
+            "message"=>"Registro exito",
+        ]);
+    }
+
+    public function destroy_colaborador_parcial(Request $request,string $id){
+        $colaborador = Colaborador::find($id);
+        $colaborador->parciales()->detach($request->input('parciales'));
+        return response()->json([
+            "message"=>"Registro eliminado",
+        ]);
+    }
+
+    public function destroy_colaborador_evaluacion(Request $request,string $id){
+        $colaborador = Colaborador::find($id);
+        $colaborador->evaluaciones()->detach($request->input('evaluaciones'));
+        return response()->json([
+            "message"=>"Registro eliminado",
         ]);
     }
 }
