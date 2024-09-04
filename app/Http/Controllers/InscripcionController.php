@@ -26,7 +26,7 @@ class InscripcionController extends Controller
             'postulante_id'=>$request->input('postulante_id'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "inscripcion"=>$inscripcion
         ]);
     }
@@ -51,7 +51,7 @@ class InscripcionController extends Controller
             'postulante_id'=>$request->input('postulante_id'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "inscripcion"=>$inscripcion
         ]);
     }
@@ -61,7 +61,7 @@ class InscripcionController extends Controller
         $inscripcion = Inscripcion::find($id);
         $inscripcion->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "inscripcion"=>$inscripcion
         ]);
     }
