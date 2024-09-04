@@ -9,8 +9,10 @@ class RolController extends Controller
 {
     public function index()
     {
-        $rol = Rol::all();
-        return response()->json($rol,200);
+        $roles = Rol::all();
+        return response()->json([
+            'roles'=>$roles,
+        ]);
     }
 
     public function store(Request $request)
@@ -27,9 +29,9 @@ class RolController extends Controller
         ]);
         //devolvemos un mensaje y la informacion del rol
         return response()->json([
-            "mensaje"=>"validacion exitosa",
+            "message"=>"Registro exitoso",
             "rol"=>$rol
-        ],200);
+        ]);
     }
 
     public function show(string $id)
@@ -56,7 +58,7 @@ class RolController extends Controller
         ]);
         //retornamos un mensaje y el registro
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "rol"=>$rol,
         ]);
     }
@@ -66,7 +68,7 @@ class RolController extends Controller
         $rol = Rol::find($id);
         $rol->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "rol"=>$rol,
         ],200);
     }
