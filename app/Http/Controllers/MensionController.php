@@ -26,7 +26,7 @@ class MensionController extends Controller
             'mension'=>$request->input('mension'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "mension"=>$mension
         ]);
     }
@@ -51,7 +51,7 @@ class MensionController extends Controller
             'mension'=>$request->input('mension'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "mension"=>$mension
         ]);
 
@@ -62,7 +62,7 @@ class MensionController extends Controller
         $mension = Mension::find($id);
         $mension->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "mension"=>$mension
         ]);
     }
