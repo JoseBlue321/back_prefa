@@ -32,6 +32,7 @@ Route::apiresource('inscripciones',InscripcionController::class);
 Route::apiresource('parciales',ParcialController::class);
 Route::apiresource('ambientes',AmbienteController::class);
 Route::apiresource('evaluaciones',EvaluacionController::class);
+Route::post('evaluaciones/{id}',[EvaluacionController::class,'store_img']);
 Route::apiresource('tipos',TipoController::class);
 Route::apiresource('colaboradores',ColaboradorController::class);
 Route::apiresource('reclamos',ReclamoController::class);

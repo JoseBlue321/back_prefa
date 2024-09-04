@@ -23,7 +23,6 @@ class EvaluacionController extends Controller
             'ambiente_id'=>['required','numeric'],
             'nota'=>['required','numeric'],
             'estado'=>['nullable','boolean'],
-            'hoja_respuesta'=>['nullable','string'],
         ]);
         $evaluacion = Evaluacion::create([
             'inscripcion_id'=>$request->input('inscripcion_id'),
@@ -31,12 +30,33 @@ class EvaluacionController extends Controller
             'ambiente_id'=>$request->input('ambiente_id'),
             'nota'=>$request->input('nota'),
             'estado'=>$request->input('estado'),
-            'hoja_respuesta'=>$request->input('hoja_respuesta'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "evaluacion"=>$evaluacion
         ]);
+    }
+    public function store_img(Request $request, string $id){
+        $request->validate([
+            'hoja_respuesta'=>['required','image','mimes:jpeg,png,jpg,gif','max:2048'],
+        ]);
+        //almacenamos la imagen en el directorio: 'public/images'
+        $evaluacion = Evaluacion::find($id);
+
+        if ($request->hasFile('hoja_respuesta')) {
+            $image = $request->file('hoja_respuesta');
+            $imageName = $evaluacion->inscripcion->postulante->carnet . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('evaluaciones/'.$evaluacion->parcial_id), $imageName);
+            // Obtenemos la URL relativa de la imagen
+            $imageUrl = 'evaluaciones/'.$evaluacion->parcial_id .'/' . $imageName;
+        }else{
+            $imageUrl = '';
+        }
+        //Almacenamos toda la información en la BD
+        $evaluacion->update([
+            'hoja_respuesta'=>$imageUrl,
+        ]);
+        return response()->json(["message"=>"Registro exitoso"],200);
     }
 
     public function show(string $id)
@@ -55,7 +75,6 @@ class EvaluacionController extends Controller
             'ambiente_id'=>['required','numeric'],
             'nota'=>['required','numeric'],
             'estado'=>['nullable','boolean'],
-            'hoja_respuesta'=>['nullable','string'],
         ]);
         $evaluacion = Evaluacion::find($id);
         $evaluacion->update([
@@ -64,10 +83,9 @@ class EvaluacionController extends Controller
             'ambiente_id'=>$request->input('ambiente_id'),
             'nota'=>$request->input('nota'),
             'estado'=>$request->input('estado'),
-            'hoja_respuesta'=>$request->input('hoja_respuesta'),
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "evaluacion"=>$evaluacion
         ]);
     }
@@ -77,7 +95,7 @@ class EvaluacionController extends Controller
         $evaluacion = Evaluacion::find($id);
         $evaluacion->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "evaluacion"=>$evaluacion
         ]);
     }
