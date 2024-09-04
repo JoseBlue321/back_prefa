@@ -28,7 +28,7 @@ class ParcialController extends Controller
             'detalle'=>$request->input('detalle')
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "parcial"=>$parcial
         ]);
     }
@@ -55,7 +55,7 @@ class ParcialController extends Controller
             'detalle'=>$request->input('detalle')
         ]);
         return response()->json([
-            "mensaje"=>"Registro Actualiazado",
+            "message"=>"Registro Actualiazado",
             "parcial"=>$parcial
         ]);
     }
@@ -65,7 +65,7 @@ class ParcialController extends Controller
         $parcial = Parcial::find($id);
         $parcial->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "parcial"=>$parcial
         ]);
     }
