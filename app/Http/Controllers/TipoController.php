@@ -24,7 +24,7 @@ class TipoController extends Controller
             'tipo'=>$request->input('tipo')
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
+            "message"=>"Registro exitoso",
             "tipo"=>$tipo
         ]);
     }
@@ -47,7 +47,7 @@ class TipoController extends Controller
             'tipo'=>$request->input('tipo')
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
+            "message"=>"Registro actualizado",
             "tipo"=>$tipo
         ]);
     }
@@ -57,7 +57,7 @@ class TipoController extends Controller
         $tipo = Tipo::find($id);
         $tipo->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
+            "message"=>"Registro eliminado",
             "tipo"=>$tipo
         ]);
     }
