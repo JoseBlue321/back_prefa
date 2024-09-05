@@ -16,11 +16,18 @@ use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ReclamoController;
 use App\Http\Controllers\DetalleController;
+use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\ConsultaController;
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//***************Autentication*******************/
+Route::post('login',[AuthController::class,'login']); //login de ingreso
+Route::post('registro',[AuthController::class,'registro']); //Registro de usuario
+
+//***************Rutas Protegidas por middleware*******************/
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('perfil',[AuthController::class,'perfil']); //Perfil del usuario
+    Route::post('logout',[AuthController::class,'logout']); //logout salir del sistema 
 });
 
 Route::apiresource('users',UserController::class);
