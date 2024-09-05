@@ -1,0 +1,2382 @@
+{
+	"info": {
+		"_postman_id": "8de3045a-5198-44b5-8f37-40e333b09a16",
+		"name": "back_prefa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15451817"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/users",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"pedro\",\r\n    \"email\": \"pedro3@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/users",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/users/1",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"maria\",\r\n    \"email\": \"maria1@gmail.com\",\r\n    \"password\": \"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/users/11",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"users",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/users/10",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "postulantes",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://prefa.test/api/postulantes",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"postulantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"5\",\r\n    \"carnet\": \"12345\",\r\n    \"nombre\": \"juan\",\r\n    \"genero\": \"masculino\",\r\n    \"fecha_nacimiento\": \"1996-03-19\",\r\n    \"correo\": \"juan123@gmail.com\",\r\n    \"fecha_pago\": \"2024-05-20 10:05:25\"\r\n}"
+						},
+						"url": {
+							"raw": "http://prefa.test/api/postulantes",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"postulantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/postulantes/19",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"postulantes",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store_img",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/ecmascript",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "postman-cloud:///1ef6a36e-e7d9-4300-afbf-b9fff93e9a76"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://prefa.test/api/postulantes/19",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"postulantes",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"5\",\r\n    \"carnet\": \"12345\",\r\n    \"nombre\": \"juan actualizado\",\r\n    \"genero\": \"masculino\",\r\n    \"fecha_nacimiento\": \"1996-03-19\",\r\n    \"correo\": \"juan123@gmail.com\",\r\n    \"fecha_pago\": \"2024-05-20 10:05:25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/postulantes/19",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"postulantes",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://prefa.test/api/postulantes/19",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"postulantes",
+								"19"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/roles",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"user_id\": 5,\r\n            \"rol\": \"admin\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/roles",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/roles/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"roles",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 5,\r\n    \"rol\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/roles/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"roles",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/roles/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"roles",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carreras",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/carreras",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"carreras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"carrera\": \"quimica\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/carreras",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"carreras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/carreras/1",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"carreras",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"carrera\": \"quimica actualizada\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/carreras/15",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"carreras",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/carreras/15",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"carreras",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mensiones",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/mensiones",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"mensiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"carrera_id\": 6,\r\n            \"mension\": \"biologia\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/mensiones",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"mensiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/mensiones/14",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"mensiones",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"carrera_id\": 6,\r\n            \"mension\": \"biologia actualizado\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/mensiones/14",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"mensiones",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/mensiones/14",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"mensiones",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inscripciones",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/inscripciones",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"inscripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"mension_id\": 4,\r\n            \"postulante_id\": 18\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/inscripciones",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"inscripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/inscripciones/4",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"inscripciones",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"mension_id\": 5,\r\n            \"postulante_id\": 18\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/inscripciones/4",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"inscripciones",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/inscripciones/4",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"inscripciones",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "parciales",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/parciales",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"parciales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"parcial\": \"Tercer Parcial\",\r\n            \"fecha\": \"2024-12-03\",\r\n            \"detalle\": \"carrera de medicina\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/parciales",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"parciales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/parciales/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"parciales",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"parcial\": \"Tercer Parcial\",\r\n            \"fecha\": \"2024-12-03\",\r\n            \"detalle\": \"carrera de medicina actualizado\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/parciales/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"parciales",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/parciales/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"parciales",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ambientes",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/ambientes",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"ambientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"edificio\": \"nutricion\",\r\n            \"piso\": \"piso 3\",\r\n            \"aula\": \"Aula N\",\r\n            \"capacidad\": 100,\r\n            \"sillas\": 100,\r\n            \"tableros\": 100\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/ambientes",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"ambientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/ambientes/3",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"ambientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"edificio\": \"nutricion actualizado\",\r\n            \"piso\": \"piso 3 actualizado\",\r\n            \"aula\": \"Aula N\",\r\n            \"capacidad\": 100,\r\n            \"sillas\": 100,\r\n            \"tableros\": 100\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/ambientes/3",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"ambientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/ambientes/3",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"ambientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "evaluaciones",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/evaluaciones",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"evaluaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"inscripcion_id\": 5,\r\n            \"parcial_id\": 4,\r\n            \"ambiente_id\": 1,\r\n            \"nota\": 48,\r\n            \"estado\": true\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/evaluaciones",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"evaluaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store_img",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hoja_respuesta",
+									"type": "file",
+									"src": "/C:/Users/MEDICINA/Desktop/12345.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://prefa.test/api/evaluaciones/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"evaluaciones",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/evaluaciones/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"evaluaciones",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"inscripcion_id\": 5,\r\n            \"parcial_id\": 4,\r\n            \"ambiente_id\": 1,\r\n            \"nota\": 48,\r\n            \"estado\": false\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/evaluaciones/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"evaluaciones",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/evaluaciones/6",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"evaluaciones",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipos",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/tipos",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"tipo\": \"otro\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/tipos",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/tipos/10",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"tipos",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"tipo\": \"otro actualizado\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/tipos/10",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"tipos",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/tipos/10",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"tipos",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "colaboradores",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"tipo_id\": 1,\r\n            \"nombre\": \"evelyn\",\r\n            \"paterno\": \"huarachi\",\r\n            \"materno\": \"choque\",\r\n            \"telefono\": \"78787878\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"tipo_id\": 1,\r\n            \"nombre\": \"evelyn\",\r\n            \"paterno\": \"huarachi\",\r\n            \"materno\": \"choque\",\r\n            \"telefono\": \"78787878\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colaborador_parcial",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parciales\":[3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/parciales/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"parciales",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colaborador_evaluacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluaciones\":[1,3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/evaluaciones/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"evaluaciones",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colaborador_parcial",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parciales\":[4]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/parciales/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"parciales",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colaborador_evaluacion",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"evaluaciones\":[1,3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/colaboradores/evaluaciones/5",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"colaboradores",
+								"evaluaciones",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "preguntas",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/preguntas",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"preguntas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"pregunta\": 6\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/preguntas",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"preguntas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/preguntas/7",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"preguntas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pregunta\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/preguntas/7",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"preguntas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/preguntas/7",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"preguntas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reclamos",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/reclamos",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"reclamos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "postulante_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parcial_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "reclamo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "abogado",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "carta",
+									"type": "file",
+									"src": "/C:/Users/MEDICINA/Desktop/PREFA 2024/2. SISTEMA BIOMETRICO/Documento/biometrico.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://prefa.test/api/reclamos",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"reclamos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/reclamos/2",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"reclamos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "postulante_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parcial_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "reclamo",
+									"value": "Mal formulada la pregunta",
+									"type": "text"
+								},
+								{
+									"key": "abogado",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "carta",
+									"type": "file",
+									"src": "postman-cloud:///1ef6b8d9-ce5a-4070-895a-4140b5caebd8"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://prefa.test/api/reclamos/2",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"reclamos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "detalles",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/detalles",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"detalles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"pregunta_id\": 5,\r\n            \"reclamo_id\": 2,\r\n            \"detalle\": \"Mal formulada\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/detalles",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"detalles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/detalles/1",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"detalles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"pregunta_id\": 5,\r\n            \"reclamo_id\": 2,\r\n            \"detalle\": \"Mal formulada actualizada\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://prefa.test/api/detalles/3",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"detalles",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://prefa.test/api/detalles/3",
+							"protocol": "http",
+							"host": [
+								"prefa",
+								"test"
+							],
+							"path": [
+								"api",
+								"detalles",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
