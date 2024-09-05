@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Reclamo extends Model
@@ -13,14 +14,24 @@ class Reclamo extends Model
     public $timestamps = false;
     protected $fillable = [
         'id',
-        'materia',
-        'pagina',
-        'pregunta',
-        'carta',
+        'postulante_id',
+        'parcial_id',
+        'reclamo',
+        'abogado',
+        'carta'
     ];
 
-    public function observaciones(): HasMany
+    public function postulante(): BelongsTo
     {
-        return $this->hasMany(Observacion::class, 'reclamo_id');
+        return $this->belongsTo(Postulante::class, 'postulante_id');
+    }
+    public function parcial(): BelongsTo
+    {
+        return $this->belongsTo(Parcial::class, 'parcial_id');
+    }
+
+    public function detalles(): HasMany
+    {
+        return $this->hasMany(Detalle::class, 'reclamo_id');
     }
 }

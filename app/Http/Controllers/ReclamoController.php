@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reclamo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ReclamoController extends Controller
 {
@@ -11,27 +12,36 @@ class ReclamoController extends Controller
     {
         $reclamos = Reclamo::all();
         return response()->json([
-            "reclamos"=>$reclamos
+            'reclamos'=>$reclamos
         ]);
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'materia'=>['required','string'],
-            'pagina'=>['nullable','string'],
-            'pregunta'=>['required','numeric'],
-            'carta'=>['required','string'],
+            'postulante_id'=>['required','numeric'],
+            'parcial_id'=>['required','numeric'],
+            'reclamo'=>['nullable','string'],
+            'abogado'=>['nullable','boolean'],
+            'carta'=>['required','mimes:pdf'],
         ]);
+        //obtenemos el archivo pdf (carta)
+        $carta = $request->file('carta');
+        // Definir el nombre único del archivo
+        $nombrepdf = $request->postulante_id . '_' . time() . '.pdf';
+        // Guardar el archivo en la carpeta 'reclamos' dentro de 'storage/app/public'
+        $ruta = $carta->storeAs('public/reclamos/'.$request->input('parcial_id'), $nombrepdf);
+
         $reclamo = Reclamo::create([
-            'materia'=>$request->input('materia'),
-            'pagina'=>$request->input('pagina'),
-            'pregunta'=>$request->input('pregunta'),
-            'carta'=>$request->input('carta'),
+            'postulante_id'=>$request->input('postulante_id'),
+            'parcial_id'=>$request->input('parcial_id'),
+            'reclamo'=>$request->input('reclamo'),
+            'abogado'=>$request->input('abogado'),
+            'carta'=>$ruta,
         ]);
         return response()->json([
-            "mensaje"=>"Registro exitoso",
-            "reclamo"=>$reclamo
+            'message'=>'Registro exitoso',
+            'reclamo'=>$reclamo
         ]);
     }
 
@@ -39,38 +49,54 @@ class ReclamoController extends Controller
     {
         $reclamo = Reclamo::find($id);
         return response()->json([
-            "reclamo"=>$reclamo
+            'reclamo'=>$reclamo
         ]);
     }
 
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'materia'=>['required','string'],
-            'pagina'=>['nullable','string'],
-            'pregunta'=>['required','numeric'],
-            'carta'=>['required','string'],
+            'postulante_id'=>['required','numeric'],
+            'parcial_id'=>['required','numeric'],
+            'reclamo'=>['nullable','string'],
+            'abogado'=>['nullable','boolean'],
+            'carta'=>['required','mimes:pdf','max:10000'],
         ]);
-        $reclamo = Reclamo::find($id);
+
+        $reclamo = Reclamo::findOrFail($id);
+
+        //obtenemos el archivo pdf (carta)
+        $carta = $request->file('carta');
+        // Definir el nombre único del archivo
+        $nombrepdf = $request->postulante_id . '_' . time() . '.pdf';
+        // Guardar el archivo en la carpeta 'reclamos' dentro de 'storage/app/public'
+        $ruta = $carta->storeAs('public/reclamos/'.$request->input('parcial_id'), $nombrepdf);
+        // Actualizamos los cambios en la base de datos
         $reclamo->update([
-            'materia'=>$request->input('materia'),
-            'pagina'=>$request->input('pagina'),
-            'pregunta'=>$request->input('pregunta'),
-            'carta'=>$request->input('carta'),
+            'postulante_id'=>$request->input('postulante_id'),
+            'parcial_id'=>$request->input('parcial_id'),
+            'reclamo'=>$request->input('reclamo'),
+            'abogado'=>$request->input('abogado'),
+            'carta'=>$ruta,
         ]);
         return response()->json([
-            "mensaje"=>"Registro actualizado",
-            "reclamo"=>$reclamo
+            'message'=>'Registro acutualizado',
+            'reclamo'=>$reclamo
         ]);
     }
 
     public function destroy(string $id)
     {
-        $reclamo = Reclamo::find($id);
+        $reclamo = Reclamo::findOrFail($id);
+        // Asegúrate de que el archivo exista antes de intentar eliminarlo
+        if (Storage::exists($reclamo->carta)) {
+            // Eliminar el archivo
+            Storage::delete($reclamo->carta);
+        } 
         $reclamo->delete();
         return response()->json([
-            "mensaje"=>"Registro eliminado",
-            "reclamo"=>$reclamo
+            'message'=>'Registro eliminado',
+            'reclamo'=>$reclamo
         ]);
     }
 }

@@ -13,8 +13,9 @@ use App\Http\Controllers\AmbienteController;
 use App\Http\Controllers\EvaluacionController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\ColaboradorController;
+use App\Http\Controllers\PreguntaController;
 use App\Http\Controllers\ReclamoController;
-use App\Http\Controllers\ObservacionController;
+use App\Http\Controllers\DetalleController;
 
 use App\Http\Controllers\ConsultaController;
 
@@ -39,8 +40,9 @@ Route::post('colaboradores/parciales/{id}',[ColaboradorController::class,'store_
 Route::post('colaboradores/evaluaciones/{id}',[ColaboradorController::class,'store_colaborador_evaluacion']);
 Route::delete('colaboradores/parciales/{id}',[ColaboradorController::class,'destroy_colaborador_parcial']);
 Route::delete('colaboradores/evaluaciones/{id}',[ColaboradorController::class,'destroy_colaborador_evaluacion']);
+Route::apiresource('preguntas',PreguntaController::class);
 Route::apiresource('reclamos',ReclamoController::class);
-Route::apiresource('observaciones',ObservacionController::class);
+Route::apiresource('detalles',DetalleController::class);
 
 //********Consultas SQL******** */
 Route::get('listar',[ConsultaController::class,'listar'])->name('listar.postulantes');

@@ -63,12 +63,20 @@ insert into colaborador_parcial(colaborador_id,parcial_id) values(3,1)
 insert into colaborador_evaluacion(colaborador_id,evaluacion_id) values(1,1);
 insert into colaborador_evaluacion(colaborador_id,evaluacion_id) values(2,1);
 
-/********RECLAMOS********/
-select * from reclamos;
-insert into reclamos(id,materia,pagina,pregunta,carta) values(1,'matemática','Pag. 152',15,'url de la carta');
+/********PREGUNTAS********/
+insert into preguntas(pregunta) values(1);
+insert into preguntas(pregunta) values(2);
+insert into preguntas(pregunta) values(3);
+insert into preguntas(pregunta) values(4);
+insert into preguntas(pregunta) values(5);
 
-/********OBSERVACIONES********/
-insert into observaciones(id,postulante_id,reclamo_id,observacion,abogado) values(1,1,1,'presento su carta de reclamo',false);
+/********RECLAMOS********/
+insert into reclamos(postulante_id,parcial_id,reclamo,abogado,carta) values(1,1,'reclamo el primer parcial',false,'url de la carta .pdf');
+
+/********DETALLES********/
+select * from detalles;
+insert into detalles(pregunta_id,reclamo_id,detalle) values(3,1,'esta mal formulada la pregunta');
+insert into detalles(pregunta_id,reclamo_id,detalle) values(5,1,'no se entiende la pregunta');
 
 
 

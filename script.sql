@@ -5,3 +5,6 @@ select * from parciales;
 select * from colaboradores;
 select * from colaborador_parcial;
 select * from colaborador_evaluacion;
+
+select * from reclamos;
+select * from detalles; 

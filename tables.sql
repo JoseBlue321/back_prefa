@@ -120,26 +120,32 @@ create table colaborador_evaluacion(
 	foreign key(evaluacion_id) references evaluaciones(id) 
 );
 
-create table reclamos(
+create table preguntas(
 	id serial primary key,
-	materia varchar(150),
-	pagina varchar(150),
-	pregunta int not null,
-	carta varchar(255)
+	pregunta int unique not null
 );
 
-create table observaciones(
+create table reclamos(
 	id serial primary key,
 	postulante_id int not null,
-	reclamo_id int not null,
-	observación text,
+	parcial_id int not null,
+	reclamo text,
 	abogado boolean,
+	carta varchar(255),
 	foreign key(postulante_id) references postulantes(id),
+	foreign key(parcial_id) references parciales(id)
+);
+
+create table detalles(
+	id serial primary key,
+	pregunta_id int not null,
+	reclamo_id int not null,
+	detalle text,
+	foreign key(pregunta_id) references preguntas(id),
 	foreign key(reclamo_id) references reclamos(id)
 );
 
-
-
+drop table reclamos;
 
 select column_name, data_type, is_nullable, column_default
 from information_schema.columns
