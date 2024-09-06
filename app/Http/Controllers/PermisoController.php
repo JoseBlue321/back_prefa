@@ -19,10 +19,14 @@ class PermisoController extends Controller
     {
         $request->validate([
             'permiso'=>['required','string'],
+            'action'=>['required','string'],
+            'subject'=>['required','string'],
             'descripcion'=>['nullable','string']
         ]);
         $permiso = Permiso::create([
             'permiso'=>$request->input('permiso'),
+            'action'=>$request->input('action'),
+            'subject'=>$request->input('subject'),
             'descripcion'=>$request->input('descripcion')
         ]);
         return response()->json([
@@ -43,11 +47,15 @@ class PermisoController extends Controller
     {
         $request->validate([
             'permiso'=>['required','string'],
+            'action'=>['required','string'],
+            'subject'=>['required','string'],
             'descripcion'=>['nullable','string']
         ]);
         $permiso = Permiso::findOrFail($id);
         $permiso->update([
             'permiso'=>$request->input('permiso'),
+            'action'=>$request->input('action'),
+            'subject'=>$request->input('subject'),
             'descripcion'=>$request->input('descripcion')
         ]);
         return response()->json([

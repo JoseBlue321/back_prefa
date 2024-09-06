@@ -145,7 +145,9 @@ create table roles(
 );
 create table permisos(
 	id serial primary key,
-	permiso varchar(50) not null,
+	permiso varchar(100) unique not null,
+	action varchar(255) not null,
+	subject varchar(255) not null,
 	descripcion varchar(255)
 );
 create table permiso_rol(
@@ -162,6 +164,10 @@ create table rol_user(
 	foreign key(rol_id) references roles(id),
 	foreign key(user_id) references users(id) 
 );
+
+
 select column_name, data_type, is_nullable, column_default
 from information_schema.columns
-where table_name = 'postulantes';
+where table_name = 'permisos';
+
+
