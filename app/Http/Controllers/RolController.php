@@ -19,13 +19,13 @@ class RolController extends Controller
     {
         //validacion de los datos
         $request->validate([
-            'user_id'=>['required','numeric'],
-            'rol'=>['required','string']
+            'rol'=>['required','string'],
+            'descripcion'=>['nullable','string']
         ]);
         //registro a la base de datos
         $rol = Rol::create([
-            'user_id'=>$request->input('user_id'),
             'rol'=>$request->input('rol'),
+            'descripcion'=>$request->input('descripcion')
         ]);
         //devolvemos un mensaje y la informacion del rol
         return response()->json([
@@ -46,15 +46,15 @@ class RolController extends Controller
     {
         //validacion de los datos
         $request->validate([
-            'user_id'=>['required','numeric'],
-            'rol'=>['required','string']
+            'rol'=>['required','string'],
+            'descripcion'=>['nullable','string']
         ]);
         //buscar al registro a actualizar
         $rol = Rol::find($id);
         //actualizamos el registro
         $rol->update([
-            'user_id'=>$request->input('user_id'),
             'rol'=>$request->input('rol'),
+            'descripcion'=>$request->input('descripcion')
         ]);
         //retornamos un mensaje y el registro
         return response()->json([
@@ -71,5 +71,13 @@ class RolController extends Controller
             "message"=>"Registro eliminado",
             "rol"=>$rol,
         ],200);
+    }
+
+    public function store_permisos(Request $request, string $id){
+        $rol = Rol::find($id);
+        $rol->permisos()->attach($request->input('permisos'));
+        return response()->json([
+            "message"=>"Registro exito",
+        ]);
     }
 }

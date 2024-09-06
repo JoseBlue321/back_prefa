@@ -10,3 +10,4 @@ select * from reclamos;
 select * from detalles; 
 
 select * from personal_access_tokens;
+select * from password_reset_tokens;

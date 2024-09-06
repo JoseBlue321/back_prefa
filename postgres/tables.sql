@@ -33,13 +33,6 @@ create table postulantes(
 	foreign key(user_id) references users(id) 
 );
 
-create table roles(
-	id serial primary key,
-	user_id int unique not null,
-	rol varchar(20) not null,
-	foreign key(user_id) references users(id)
-);
-
 create table carreras(
 	id serial primary key,
 	carrera varchar(150) not null
@@ -145,8 +138,30 @@ create table detalles(
 	foreign key(reclamo_id) references reclamos(id)
 );
 
-drop table reclamos;
-
+create table roles(
+	id serial primary key,
+	rol varchar(50) not null,
+	descripcion varchar(255)
+);
+create table permisos(
+	id serial primary key,
+	permiso varchar(50) not null,
+	descripcion varchar(255)
+);
+create table permiso_rol(
+	permiso_id int not null,
+	rol_id int not null,
+	primary key(permiso_id,rol_id),
+	foreign key(permiso_id) references permisos(id),
+	foreign key(rol_id) references roles(id) 
+);
+create table rol_user(
+	rol_id int not null,
+	user_id int not null,
+	primary key(rol_id,user_id),
+	foreign key(rol_id) references roles(id),
+	foreign key(user_id) references users(id) 
+);
 select column_name, data_type, is_nullable, column_default
 from information_schema.columns
 where table_name = 'postulantes';

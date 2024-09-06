@@ -5,7 +5,7 @@ insert into users(id,name,email,password) values(1,'jose apaza saavedra','jos123
 insert into postulantes(id,user_id,carnet,paterno,materno,nombre,genero,fecha_nacimiento,provincia,departamento) values();
 
 /********ROLES********/
-insert into roles(id,user_id,rol) values(1,1,'postulante');
+insert into roles(id,rol,descripcion) values(1,'postulante','');
 
 /********CARRERAS********/
 insert into carreraS(id,carrera) values(1,'MEDICINA');

@@ -8,3 +8,8 @@ select * from colaborador_evaluacion;
 
 select * from reclamos;
 select * from detalles; 
+
+select * from roles;
+select * from permisos;
+select * from rol_user;
+select * from permiso_rol;

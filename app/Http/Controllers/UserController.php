@@ -63,4 +63,12 @@ class UserController extends Controller
         $user->delete();
         return response()->json(["message"=>"Registro eliminado"],200);
     }
+
+    public function store_roles(Request $request, string $id){
+        $user = User::find($id);
+        $user->roles()->attach($request->input('roles'));
+        return response()->json([
+            "message"=>"Registro exito",
+        ]);
+    }
 }

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -48,8 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Postulante::class, 'user_id');
     }
-    public function rol(): HasOne
+
+    public function roles(): BelongsToMany
     {
-        return $this->hasOne(Rol::class, 'user_id');
+        return $this->belongsToMany(Rol::class, 'rol_user', 'user_id','rol_id');
     }
 }
