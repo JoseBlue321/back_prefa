@@ -32,8 +32,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('logout',[AuthController::class,'logout']); //logout salir del sistema 
     
     //********Logica de negocio (Sistema)**********
-    
-    
+    Route::apiresource('users',UserController::class);
     Route::apiresource('postulantes',PostulanteController::class);
     Route::post('postulantes/{id}',[PostulanteController::class,'store_img']);
     Route::apiresource('carreras',CarreraController::class);
@@ -54,13 +53,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiresource('detalles',DetalleController::class);
 
     //********Roles y Permisos**********
-    
+    Route::apiresource('roles',RolController::class);
+    Route::apiresource('permisos',PermisoController::class);
+    Route::post('users/roles/{id}',[UserController::class,'store_roles']);
+    Route::post('roles/permisos/{id}',[RolController::class,'store_permisos']);    
     
 });
-Route::apiresource('roles',RolController::class);
-Route::apiresource('permisos',PermisoController::class);
 
-Route::apiresource('users',UserController::class);
-Route::post('users/roles/{id}',[UserController::class,'store_roles']);
-Route::post('roles/permisos/{id}',[RolController::class,'store_permisos']);
 

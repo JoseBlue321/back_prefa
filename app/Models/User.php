@@ -53,4 +53,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Rol::class, 'rol_user', 'user_id','rol_id');
     }
+
+    //Creamos la función 'permisos'
+    public function permisos(){
+        // ['index_carrera','show_carrera',...]
+        return $this->roles->map->permisos->flatten()->pluck("permiso")->unique;
+    }
 }

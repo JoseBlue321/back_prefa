@@ -2,25 +2,28 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Gate; //puertas
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Models\User;
+use App\Model\Permiso;
 
 class AuthServiceProvider extends ServiceProvider
-{
-    /**
-     * The model to policy mappings for the application.
-     *
-     * @var array<class-string, class-string>
-     */
+{   
+    // Politicas para proteger
     protected $policies = [
         //
     ];
 
-    /**
-     * Register any authentication / authorization services.
-     */
+    //******Gates(puertas)*******
     public function boot(): void
     {
-        //
+        Gate::before(function(User $user, Permiso $permiso){
+            //usuario 'admin' (tiene acceso a todo)
+            if($user->permisos()->contains("manage_all")){
+                return true;
+            }
+            // Si es otro tipo de usuario devolvemos el permiso que tiene
+            return $user->pemisos()->contains($permiso); 
+        });
     }
 }

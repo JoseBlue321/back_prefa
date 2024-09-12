@@ -13,3 +13,5 @@ select * from roles;
 select * from permisos;
 select * from rol_user;
 select * from permiso_rol;
+
+select * from  personal_access_tokens;
